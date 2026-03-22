@@ -6,6 +6,8 @@ The data is in multiple SQLite databases, grouped by date.
 
 If you need a way to access and visualize the data, check out [DB Browser for SQLite](https://sqlitebrowser.org/).
 
+Data timestamps for 2025 are Unix timestamps in GMT-4. Afterwards they are in UTC.
+
 > Note: Some of the earlier databases **may have overlapping data**, so be aware of duplicates
 
 ## Tools
