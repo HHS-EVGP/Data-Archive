@@ -13,3 +13,4 @@ Data timestamps for 2025 are Unix timestamps in GMT-4. Afterwards they are in UT
 ## Tools
 We also publish any custom tools that we have created to help with analyzing our data, which can be found under [tools](https://github.com/HHS-EVGP/Data-Archive/tree/main/tools). Below is a list of what we have:
 - `view_creator.py` to create views inside the database, grouping the data by day
+- `db_converter.py` to convert from a text dump of data points into a database
