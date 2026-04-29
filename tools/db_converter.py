@@ -53,11 +53,21 @@ with open(DATALOG, "r") as file:
     for line in file:
         data = line.split(",")
 
-        # Skip values withought timestamp
+        # Skip lines withought timestamp
         if data[0] == 'nan':
             print("No timestamp for packet!")
             continue
         
+        # Clean up: Convert timestamp to a float and remove trailing \n
+        data[0] = float(data[0])
+        data[-1] = data[-1].strip('\n')
+
+        # Skip lines if the timestamp is outside of 2026
+        # This happens in the rare case that the GPS module just booted up
+        if data[0] < 1767243600 or data[0] > 1798779599:
+            print("Abusrd timestamp")
+            continue
+
         # Convert "nan" to none
         for i in range(len(data)):
             if data[i] == "nan":
