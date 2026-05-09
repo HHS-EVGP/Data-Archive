@@ -57,7 +57,7 @@ with open(DATALOG, "r") as file:
         if data[0] == 'nan':
             print("No timestamp for packet!")
             continue
-        
+
         # Clean up: Convert timestamp to a float and remove trailing \n
         data[0] = float(data[0])
         data[-1] = data[-1].strip('\n')
