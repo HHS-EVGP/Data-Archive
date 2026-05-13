@@ -2,7 +2,7 @@
 
 import sqlite3
 
-DATALOG = "evdata.txt"
+DATALOG = input("Enter name of the text file dump: ")
 OUTPUTDB = "data.sqlite"
 
 # Link the database to the python cursor
@@ -83,12 +83,12 @@ with open(DATALOG, "r") as file:
             print("Database Error:", e)
 
 # Find a list of days that are present in the database
-cur.execute('''
+cur.execute("""
     SELECT DISTINCT
         DATE(time, 'unixepoch') AS day
         FROM main
         ORDER BY day;
-''')
+""")
 days = cur.fetchall()
 
 ## Create individual views for each existing day if they do not exist
