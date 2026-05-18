@@ -25,3 +25,4 @@ for day in days:
 con.commit()
 
 print("Views Created:", days)
+con.close()

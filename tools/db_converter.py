@@ -99,3 +99,5 @@ for day in days:
     WHERE DATE(time, 'unixepoch') = '{day[0]}';
     """)
 con.commit()
+
+con.close()
